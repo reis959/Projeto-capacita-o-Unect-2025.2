@@ -1,0 +1,334 @@
+/* Importação da Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Estilos Gerais e Reset */
+:root {
+    --color-blue-bannerescuro:: var(--Colors-blue600, #63B3C9);
+    --color-blue-fundo: var(--Colors-blue200, #E2F5FA);
+    --color-blue-bannersclaro: var(--Colors-blue400, #89C5D5);
+    --color-white: var(--Colors-white, #F8F8FF);
+    --color-text:var(--Colors-blue1100, #063643);
+
+}
+
+* {
+
+}
+
+body {
+background-color: var(--color-blue-fundo);
+}
+
+h2, h3 {
+
+}
+
+section {
+
+}
+
+/* Cabeçalho */
+#main-header {
+width: 1920;
+height: 140;
+border-width: 1px;
+
+opacity: 1;
+
+}
+
+.logo-menu {
+
+}
+
+#logo-img {
+
+}
+
+#logo-text {
+
+}
+
+#main-nav a {
+
+}
+
+#main-nav a:hover {
+
+}
+
+/* Seção Banner Central */
+#banner-central {
+width: 1180;
+height: 450;
+top: 160px;
+left: 370px;
+border-width: 1px;
+opacity: 1;
+border-radius: 8px;
+background-color: var(--color-white);
+}
+
+#banner-content-main {
+
+}
+
+#banner-title {
+width: 420;
+height: 84;
+top: 48px;
+left: 80px;
+opacity: 1;
+color: var(--color-text);
+
+}
+
+#banner-contact-button {
+
+}
+
+#banner-contact-button:hover {
+
+}
+
+#banner-pets-img {
+
+}
+
+/* Seção Banner Campanha */
+#banner {
+
+}
+
+.vacina-campanha {
+
+}
+
+#vaccine-title {
+
+}
+
+#vaccine-date {
+
+}
+
+#vaccine-button {
+
+}
+
+#vaccine-button:hover {
+
+}
+
+/* Ícones decorativos */
+#icon-paw1 {
+
+}
+
+#icon-paw2 {
+
+}
+
+#icon-syringe {
+
+}
+
+#icon-cat {
+
+}
+
+/* Seção Quem Somos */
+#quem-somos {
+
+}
+
+#about-us-logo {
+
+}
+
+#about-us-title {
+
+}
+
+#about-us-text {
+
+}
+
+/* Seção Serviços */
+#servicos {
+
+}
+
+#services-title {
+
+}
+
+#services-list {
+
+}
+
+.servico {
+
+}
+
+.servico img {
+
+}
+
+.servico p {
+
+}
+
+/* Seção Equipe */
+#equipe {
+
+}
+
+#team-title {
+
+}
+
+#team-list {
+
+}
+
+.medico {
+
+}
+
+.medico img {
+
+}
+
+.medico span {
+
+}
+
+.medico small {
+
+}
+
+/* Seção Avaliações */
+#avaliacoes {
+
+}
+
+#reviews-title {
+
+}
+
+.avaliacao {
+
+}
+
+.avaliacao img {
+
+}
+
+.avaliacao span {
+
+}
+
+.estrelas {
+
+}
+
+/* Seção Contato */
+#contato {
+
+}
+
+#contact-title {
+
+}
+
+#contact-container {
+
+}
+
+#contact-info {
+
+}
+
+#contact-info h4 {
+
+}
+
+#contact-info p {
+
+}
+
+#contact-map-img {
+
+}
+
+#contact-social {
+
+}
+
+#contact-social span {
+
+}
+
+#contact-form {
+
+}
+
+#contact-form input,
+#contact-form textarea {
+
+}
+
+#contact-form textarea {
+
+}
+
+#form-submit-button {
+
+}
+
+#form-submit-button:hover {
+
+}
+
+/* Rodapé */
+#main-footer {
+
+}
+
+#footer-container {
+
+}
+
+#footer-logo-container {
+
+}
+
+#footer-logo-img {
+
+}
+
+#footer-logo-text {
+
+}
+
+#footer-links-container {
+
+}
+
+#footer-links-container h4 {
+
+}
+
+#footer-links-container a,
+#footer-links-container span {
+
+}
+
+#footer-links-container a:hover {
+
+}
+
+#footer-copyright {
+
+}
