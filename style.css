@@ -59,18 +59,30 @@ opacity: 1;
 
 /* Seção Banner Central */
 #banner-central {
-width: 1180;
-height: 450;
+width: 1180px;
+height: 450px;
+opacity: 1;
 top: 160px;
 left: 370px;
-border-width: 1px;
-opacity: 1;
 border-radius: 8px;
-background-color: var(--color-white);
+border-width: 1px;
+background: var(--Colors-white, rgba(248, 248, 255, 1));
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+border: 1px solid rgba(0, 0, 0, 0.15)
 }
 
 #banner-content-main {
-
+  margin: 40px;
+  width: 420px;
+  height: 84px;
+  opacity: 1;
+  top: 48px;
+  left: 80px;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 2px;
 }
 
 #banner-title {
@@ -84,28 +96,80 @@ color: var(--color-text);
 }
 
 #banner-contact-button {
-
+width: 200px;
+height: 72px;
+opacity: 1;
+top: 202px;
+left: 80px;
+border-radius: 8px;
+padding-top: 10px;
+padding-right: 5px;
+padding-bottom: 10px;
+padding-left: 5px;
+gap: 10px;
+background: var(--Colors-blue1000, rgba(15, 99, 122, 1));
+color: white;
 }
 
 #banner-contact-button:hover {
-
+box-sizing: content-box;
+width: 200px;
+height: 72px;
 }
 
 #banner-pets-img {
+position: absolute;
+object-fit: cover;
+width: 717px;
+height: 260px;
+opacity: 1;
+top: 280px;
+left: 500px;
 
 }
 
 /* Seção Banner Campanha */
 #banner {
-
+margin: 50px;
+width: 1094.181884765625px;
+height: 300px;
+opacity: 1;
+left: 42.91px;
+border-radius: 8px;
+background: rgba(107, 183, 203, 1);
+box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .vacina-campanha {
-
+width: 311px;
+height: 30px;
+opacity: 1;
+top: 78px;
+left: 510px;
+font-family: Poppins;
+font-weight: 500;
+font-style: Medium;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 2%;
+color: rgba(15, 99, 122, 1);
 }
 
 #vaccine-title {
-
+width: 378px;
+height: 42px;
+opacity: 1;
+top: 24px;
+left: 502px;
+font-family: Poppins;
+font-weight: 700;
+font-style: Bold;
+font-size: 28px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 2%;
+color : rgba(6, 54, 67, 1);
 }
 
 #vaccine-date {
@@ -113,15 +177,42 @@ color: var(--color-text);
 }
 
 #vaccine-button {
-
+width: 283px;
+height: 72px;
+angle: 0deg;
+opacity: 1;
+top: 159px;
+left: 553px;
+border-radius: 4px;
+padding-top: 10px;
+padding-right: 5px;
+padding-bottom: 10px;
+padding-left: 5px;
+gap: 10px;
+background: var(--Colors-white, rgba(248, 248, 255, 1));
 }
 
 #vaccine-button:hover {
-
+width: 161px;
+height: 42px;
+opacity: 1;
+font-family: Poppins;
+font-weight: 700;
+font-style: Bold;
+font-size: 28px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
 }
 
 /* Ícones decorativos */
 #icon-paw1 {
+width: 99.99999982731573px;
+height: 96.28906233372393px;
+angle: 33.15deg;
+opacity: 1;
+top: 12px;
+left: 20px;
 
 }
 
@@ -134,32 +225,86 @@ color: var(--color-text);
 }
 
 #icon-cat {
-
+position: absolute;
+object-fit: cover;
+width: 120px;
+height: 195.66879272460938px;
+opacity: 1;
+top: 700px;
+left: 863px;
 }
 
 /* Seção Quem Somos */
 #quem-somos {
-
+width: 1920px;
+height: 300px;
+angle: 0 deg;
+opacity: 1;
+top: 1002px;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+background: var(--Colors-blue400, rgba(137, 197, 213, 1));
 }
 
 #about-us-logo {
+position: absolute;
+object-fit: cover;
+width: 100px;
+height: 100px;
+angle: 0 deg;
+opacity: 1;
+left: 300px;
+top: 1050px;
 
 }
 
 #about-us-title {
-
+position: absolute;
+width: 177px;
+height: 36px;
+angle: 0deg;
+opacity: 1;
+top: 970px;
+left: 500px;
 }
 
 #about-us-text {
+position: absolute;
+width: 699px;
+height: 104px;
+angle: 0deg;
+opacity: 1;
+top: 1060px;
+left: 500px;
 
 }
 
 /* Seção Serviços */
 #servicos {
+width: 1920px;
+height: 300px;
+angle: 0deg;
+opacity: 1;
+top: 1302px;
+background: var(--Colors-blue600, rgba(99, 179, 201, 1));
 
 }
 
 #services-title {
+width: 199px;
+height: 29px;
+angle: 0 deg;
+opacity: 1;
+top: 53px;
+left: 450px;
+font-family: Inter;
+font-weight: 700;
+font-style: Bold;
+font-size: 24px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+color: rgba(6, 54, 67, 1);
 
 }
 
