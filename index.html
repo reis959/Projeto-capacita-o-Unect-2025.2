@@ -32,17 +32,31 @@
             <img src="/public/risco.png" alt="Risquinhos" id="risco">
         </section>
 
-        <section id="banner">
-            <div class="vacina-campanha" id="vaccine-campaign">
-                 <img src="/public/Seringa.png" alt="Seringa" id="icon-syringe">
-                 <img src="/public/Pata.png" alt="Pata" srcset="icon-paw1">
-                 <img src="/public/Pata2.png" alt="Pata" srcset="icon-paw2">
-                <div>
-                    <h3 id="vaccine-title">Campanha de vacinação</h3>
-                    <p id="vaccine-date">Nos dias 19 a 28 de novembro</p>
-                    <button id="vaccine-button">Saiba mais</button>
+       <section id="banner">
+            <div class="carousel-container">
+                <button class="carousel-control prev">
+                    &lt;
+                </button>
+                <div class="vacina-campanha" id="vaccine-campaign">
+                    <img src="/public/Seringa.png" alt="Seringa" id="icon-syringe">
+                    <img src="/public/Pata.png" alt="Pata" class="icon-paw1">
+                    <img src="/public/Pata2.png" alt="Pata" class="icon-paw2">
+                    <div>
+                        <h3 id="vaccine-title">Campanha de vacinação</h3>
+                        <p id="vaccine-date">Nos dias 19 a 28 de novembro</p>
+                        <button id="vaccine-button">Saiba mais</button>
+                    </div>
+                    <img src="/public/Gato.png" alt="gato" id="icon-cat">
                 </div>
-                 <img src="/public/Gato.png" alt="gato" id="icon-cat">
+                <button class="carousel-control next">
+                    &gt;
+                </button>
+            </div>
+            
+            <div class="carousel-indicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </section>
 
@@ -148,10 +162,18 @@
                     </div>
                 </div>
                 <form class="contato-form" id="contact-form">
-                    <input type="text" placeholder="Nome" required id="form-name">
-                    <input type="text" placeholder="Sobrenome" required id="form-lastname">
-                    <input type="email" placeholder="E-mail" required id="form-email">
-                    <textarea placeholder="Mensagem" required id="form-message"></textarea>
+                    <label for="form-name">Nome</label>
+                    <input type="text" id="form-name" required>
+
+                    <label for="form-lastname">Sobrenome</label>
+                    <input type="text" id="form-lastname" required>
+
+                    <label for="form-email">E-mail</label>
+                    <input type="email" id="form-email" required>
+
+                    <label for="form-message">Mensagem</label>
+                    <textarea id="form-message" required></textarea>
+
                     <button type="submit" id="form-submit-button">ENVIAR</button>
                 </form>
             </div>
