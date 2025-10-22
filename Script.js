@@ -1,4 +1,4 @@
-
+// Espera o documento HTML carregar antes de executar o script
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- CAROUSEL BANNER ---
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-        
+            // Atualiza o número da página exibido
             pageNumberDisplay.textContent = page;
 
             prevButtonPagination.disabled = (page === 1);
