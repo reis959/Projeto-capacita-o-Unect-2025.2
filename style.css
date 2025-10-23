@@ -1,14 +1,14 @@
-/* Importação da Fonte */
+/* Fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Estilos Gerais e Reset */
+/* Variáveis e reset */
 :root {
-    --color-blue-bannerescuro: var(--Colors-blue600, #63B3C9);
-    --color-blue-fundo: var(--Colors-blue200, #E2F5FA);
-    --color-blue-bannersclaro: var(--Colors-blue400, #89C5D5);
-    --color-white: var(--Colors-white, #F8F8FF);
-    --color-text: var(--Colors-blue1100, #063643);
-    --color-segundocarrosel: var(--color-azul-escuro-esverdeiado, #063643);
+    --color-blue-bannerescuro: #63B3C9;
+    --color-blue-fundo: #E2F5FA;
+    --color-blue-bannersclaro: #89C5D5;
+    --color-white: #F8F8FF;
+    --color-text: #063643;
+    --color-segundocarrosel: #063643;
     --color-dark-blue: rgba(15, 99, 122, 1);
 }
 
@@ -25,11 +25,6 @@ body {
     flex-direction: column;
 }
 
-h2,
-h3 {
-    color: var(--Colors-blue1100, rgba(6, 54, 67, 1));
-}
-
 section {
     width: 100%;
     display: flex;
@@ -37,15 +32,31 @@ section {
     padding: 40px 0;
 }
 
-/* Cabeçalho */
+h2,
+h3 {
+    color: var(--color-text);
+}
+
+/* Rolagem suave em toda a página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Evita que o header fixo cubra os alvos */
+section,
+#inicio {
+    scroll-margin-top: 110px;
+}
+
+/* Header */
 #main-header {
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: var(--Colors-white, rgba(248, 248, 255, 1));
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    background: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -59,15 +70,17 @@ section {
 }
 
 #logo-img {
-    width: 40px;
-    height: 40px;
+    width: 73.59812927246094;
+    height: 69.82413482666016;
+    top: 35px;
+    left: 390px;
+    opacity: 1;
 }
 
 #logo-text {
     font-weight: 700;
     font-size: 1.2rem;
-    color: var(--Colors-blue1100, rgba(6, 54, 67, 1));
-    ;
+    color: var(--color-text);
 }
 
 #main-nav a {
@@ -75,29 +88,27 @@ section {
     color: var(--color-text);
     margin-left: 30px;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color .3s;
 }
 
 #main-nav a:hover {
-    color: var(--Colors-blue1100, rgba(6, 54, 67, 1));
+    color: var(--color-text);
 }
 
-/* Seção Banner Central */
+/* Hero */
 #banner-central {
     width: 1180px;
     height: 450px;
-    margin-top: 20px;
-    padding: 40px;
+    margin: 20px auto 0;
     border-radius: 8px;
-    background: var(--Colors-white, rgba(248, 248, 255, 1));
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+    border: 1px solid rgba(0, 0, 0, .15);
     display: flex;
     justify-content: flex-start;
     position: relative;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 40px;
 }
 
 #banner-content-main {
@@ -112,8 +123,7 @@ section {
     font-size: 2.2rem;
     line-height: 1.2;
     margin-bottom: 25px;
-    letter-spacing: normal;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .05);
 }
 
 #banner-contact-button {
@@ -121,17 +131,17 @@ section {
     height: 50px;
     border-radius: 8px;
     border: none;
-    background: var(--Colors-blue1000, rgba(15, 99, 122, 1));
+    background: var(--color-dark-blue);
     color: var(--color-white);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background .3s;
     padding: 0;
-}
-
-#banner-contact-button:hover {
-    background: rgba(15, 99, 122, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 #banner-pets-img {
@@ -149,31 +159,24 @@ section {
     position: absolute;
     width: 150px;
     height: 150px;
-    opacity: 0.3;
+    opacity: .3;
     right: 20px;
     top: 20px;
     transform: rotate(45deg);
     z-index: 0;
 }
 
-/* Seção Banner Campanha */
-
+/* Carousel wrapper */
 #banner {
     width: 1180px;
     height: 290px;
-    margin-top: 40px;
-    padding-left: 60px;
-    padding-right: 60px;
-    box-sizing: border-box;
+    margin: 40px auto 0;
+    padding: 0 60px;
     border-radius: 8px;
-    box-shadow: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .carousel-container {
@@ -185,13 +188,13 @@ section {
     position: relative;
 }
 
+/* Slide 1 */
 .vacina-campanha {
     width: 100%;
     height: 250px;
     padding: 20px 40px;
     border-radius: 8px;
-    background: var(--Colors-blue600, rgba(99, 179, 201, 1));
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
+    background: var(--color-blue-bannerescuro);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -233,31 +236,27 @@ section {
     color: var(--color-text);
     font-weight: 700;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
 #icon-syringe {
     position: absolute;
     width: 90px;
     height: 90px;
-    opacity: 1;
     left: 200px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 0;
 }
 
-/* Ícones decorativos */
 #icon-paw1 {
     position: absolute;
     width: 100px;
     height: 100px;
-    opacity: 0.8;
     left: 100px;
     top: 50px;
-    transform: translateY(-50%) rotate(0deg);
+    transform: translateY(-50%);
+    opacity: .8;
     z-index: 0;
 }
 
@@ -265,10 +264,10 @@ section {
     position: absolute;
     width: 80px;
     height: 80px;
-    opacity: 0.8;
     left: 330px;
     top: 50%;
-    transform: translateY(-50%) rotate(0deg);
+    transform: translateY(-50%);
+    opacity: .8;
     z-index: 0;
 }
 
@@ -278,12 +277,11 @@ section {
     height: 100%;
     right: 50px;
     bottom: 0;
-    opacity: 1;
     z-index: 0;
     object-fit: contain;
 }
 
-
+/* Slide 2 */
 .adocao-campanha {
     width: 100%;
     height: 250px;
@@ -291,7 +289,6 @@ section {
     border-radius: 8px;
     background: var(--color-segundocarrosel);
     background-image: url('/public/pesticosNeve.png');
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -305,27 +302,24 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
     text-align: left;
     gap: 5px;
     z-index: 1;
     flex-basis: 50%;
-
 }
 
 #adoption-title {
     font-weight: 700;
     font-size: 1.6rem;
-    color: var(--color-white, #FFFFFF);
+    color: #fff;
 }
 
 #adoption-desc {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--color-white, #FFFFFF);
+    color: #fff;
     margin-bottom: 10px;
     max-width: 450px;
-
 }
 
 #adoption-button {
@@ -333,44 +327,33 @@ section {
     height: 40px;
     border-radius: 4px;
     border: none;
-    background: var(--color-white, #FFF);
-
-    color: var(--color-text, #333);
-
+    background: #fff;
+    color: var(--color-text);
     font-weight: 700;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
 #icon-dog {
     height: 180px;
-
     width: auto;
     z-index: 1;
 }
 
 #icon-cat-upside-down {
     height: 160px;
-
     width: auto;
     z-index: 1;
 }
 
-/* Slide 3: Banho e Tosa */
+/* Slide 3 */
 .banho-tosa-campanha {
     width: 100%;
     height: 250px;
     padding: 20px 40px;
     border-radius: 8px;
-    background: var(--color-white, #FFFFFF);
-
-
+    background: #fff;
     background-image: url('/public/banho.png');
-
-
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -393,14 +376,13 @@ section {
 #grooming-title {
     font-weight: 700;
     font-size: 1.6rem;
-    color: var(--color-text, #333);
-
+    color: var(--color-text);
 }
 
 #grooming-desc {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--color-text, #333);
+    color: var(--color-text);
     margin-bottom: 10px;
     max-width: 450px;
 }
@@ -410,15 +392,11 @@ section {
     height: 40px;
     border-radius: 4px;
     border: none;
-    background: var(--color-text, #333);
-
-    color: var(--color-white, #FFF);
-
+    background: var(--color-text);
+    color: #fff;
     font-weight: 700;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
 #icon-umbrella {
@@ -429,11 +407,11 @@ section {
 
 #icon-cat-grooming {
     height: 200px;
-
     width: auto;
     z-index: 1;
 }
 
+/* Carousel controles/indicadores */
 .carousel-control {
     position: absolute;
     background: transparent;
@@ -448,24 +426,14 @@ section {
 }
 
 .carousel-control.prev {
-
     left: -50px;
 }
 
 .carousel-control.next {
-
     right: -50px;
 }
 
-.carousel-control img {
-    width: 30px;
-    height: 30px;
-    filter: invert(15%) sepia(50%) saturate(600%) hue-rotate(170deg) brightness(90%) contrast(90%);
-}
-
-/* Estilização dos indicadores (pontinhos) */
 .carousel-indicators {
-    /* Centraliza os pontinhos */
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -478,14 +446,14 @@ section {
     border-radius: 50%;
     background-color: #ccc;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color .3s;
 }
 
 .dot.active {
     background-color: rgba(99, 179, 201, 1);
 }
 
-/* Seção Quem Somos */
+/* Quem somos */
 #quem-somos {
     background: var(--color-blue-bannersclaro);
     padding: 80px 0;
@@ -505,14 +473,12 @@ section {
     gap: 60px;
 }
 
-
 .about-us-logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
-
 
 #about-us-logo {
     width: 120px;
@@ -521,18 +487,15 @@ section {
     opacity: 1;
 }
 
-
 #about-us-logo-text {
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--color-text);
 }
 
-
 .about-us-text-container {
     max-width: 600px;
 }
-
 
 #about-us-title {
     font-size: 1.8rem;
@@ -540,16 +503,13 @@ section {
     margin-bottom: 15px;
 }
 
-
 #about-us-text {
     font-size: 1.05rem;
     line-height: 1.6;
-    color: var(--Colors-blue1100, rgba(6, 54, 67, 1));
+    color: var(--color-text);
 }
 
-
-
-
+/* Serviços */
 .servicos-container {
     width: 100%;
     max-width: 1180px;
@@ -558,14 +518,14 @@ section {
     gap: 40px;
 }
 
-#servicos-topo {
+#servicos {
     padding: 60px 0;
     width: 100%;
     background: var(--color-blue-bannerescuro);
     background-image: url('/public/fundo-animais-icons.png');
     background-repeat: repeat;
     background-position: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
     z-index: 2;
     position: relative;
 }
@@ -575,8 +535,7 @@ section {
     font-weight: 700;
     margin-bottom: 0;
     align-self: flex-start;
-    color: var(--color-white);
-    /* Título branco */
+    color: #fff;
 }
 
 #servicos-base {
@@ -607,7 +566,6 @@ section {
     align-self: flex-end;
 }
 
-/* Imagem geral do card (para a consulta) */
 .servico img {
     width: 320px;
     height: 260px;
@@ -616,9 +574,6 @@ section {
     margin: 0 20px;
 }
 
-
-#service-care-img {}
-
 .servico p {
     font-size: 1rem;
     line-height: 1.5;
@@ -626,18 +581,19 @@ section {
     flex-grow: 1;
 }
 
-/* Seção Equipe */
+/* Equipe */
 #equipe {
-    background-color: var(--color-white);
-    width: 1180px; 
+    background-color: #fff;
+    width: 1180px;
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
     padding: 60px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 40px auto 0 auto;    
+    margin: 40px auto 0;
 }
+
 #team-title {
     font-size: 2rem;
     font-weight: 700;
@@ -646,7 +602,7 @@ section {
 }
 
 #team-list {
-    width: 100%; 
+    width: 100%;
     display: flex;
     justify-content: space-around;
     gap: 30px;
@@ -660,12 +616,11 @@ section {
     width: 25%;
 }
 
-
 .medico img {
-    width: 100%; 
-    height: 180px; 
+    width: 100%;
+    height: 180px;
     object-fit: contain;
-    border-radius: 8px; 
+    border-radius: 8px;
     margin-bottom: 15px;
 }
 
@@ -676,10 +631,11 @@ section {
 }
 
 .medico small {
-    font-size: 0.9rem;
-    color: var(--color-text); 
+    font-size: .9rem;
+    color: var(--color-text);
 }
 
+/* Avaliações */
 #avaliacoes {
     background-color: var(--color-blue-fundo);
     padding: 80px 0;
@@ -708,7 +664,7 @@ section {
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
     padding-bottom: 25px;
     margin-bottom: 25px;
 }
@@ -719,7 +675,6 @@ section {
     margin-bottom: 0;
 }
 
-/* --- ESTILOS QUE FALTAVAM NO SEU BLOCO, MAS SÃO NECESSÁRIOS --- */
 .avaliacao img {
     width: 60px;
     height: 60px;
@@ -727,7 +682,7 @@ section {
     border-radius: 50%;
 }
 
-.avaliacao > div {
+.avaliacao>div {
     display: flex;
     flex-direction: column;
 }
@@ -745,7 +700,7 @@ section {
 }
 
 .avaliacao p {
-    font-size: 0.95rem;
+    font-size: .95rem;
     color: var(--color-text);
 }
 
@@ -763,13 +718,13 @@ section {
     font-weight: 600;
     color: var(--color-text);
     padding: 5px 10px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 4px;
 }
 
 .page-arrow {
     background: none;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 4px;
     padding: 6px 10px;
     font-size: 1rem;
@@ -779,14 +734,15 @@ section {
 }
 
 .page-arrow:disabled {
-    opacity: 0.5;
+    opacity: .5;
     cursor: not-allowed;
 }
 
 .review-hidden {
     display: none;
 }
-/* Seção Contato */
+
+/* Contato */
 #contato {
     background-color: var(--color-blue-fundo);
     padding: 80px 0;
@@ -812,10 +768,10 @@ section {
 .contato-container {
     width: 900px;
     display: flex;
-    background-color: var(--color-white);
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .1);
     overflow: hidden;
 }
 
@@ -825,8 +781,8 @@ section {
     display: flex;
     flex-direction: column;
     background-color: rgba(250, 253, 255, 1);
-    border-top: 1px solid rgba(6, 54, 67, 0.4);
-    border-right: 1px solid rgba(6, 54, 67, 0.4);
+    border-top: 1px solid rgba(6, 54, 67, .4);
+    border-right: 1px solid rgba(6, 54, 67, .4);
 }
 
 #contact-info h4 {
@@ -839,7 +795,7 @@ section {
 #contact-info p {
     font-size: 1rem;
     line-height: 1.5;
-    color: var(rgba(6, 54, 67, 1));
+    color: var(--color-text);
     margin-bottom: 20px;
 }
 
@@ -849,7 +805,7 @@ section {
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 30px;
-    border: 1px solid rgba(15, 99, 122, 0.4);
+    border: 1px solid rgba(15, 99, 122, .4);
 }
 
 #contact-social {
@@ -888,18 +844,26 @@ section {
     margin-top: 0;
 }
 
-.contato-form input,
-.contato-form textarea {
-    padding: 15px;
-    border: 1px solid rgba(6, 54, 67, 0.7);
-    border-radius: 4px;
-    font-size: 1rem;
+/* Inputs e foco */
+#contato .contato-form input,
+#contato .contato-form textarea {
     width: 100%;
+    padding: 12px;
+    border: 1px solid #cfd9dc;
+    border-radius: 6px;
+    background: #fff;
+    transition: border-color .15s, box-shadow .15s;
 }
 
-.contato-form textarea {
+#contato .contato-form textarea {
     resize: vertical;
     min-height: 100px;
+}
+
+#contato .contato-form :is(input, textarea):focus {
+    border-color: #063643;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(6, 54, 67, .12);
 }
 
 #form-submit-button {
@@ -907,27 +871,20 @@ section {
     height: 45px;
     border: none;
     border-radius: 4px;
-
     background: var(--color-dark-blue);
-
-    color: var(--color-white);
+    color: #fff;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
     align-self: flex-start;
-    transition: none;
     margin-top: 30px;
     padding: 10px 20px;
 }
 
-#form-submit-button:hover {
-    background: var(--color-dark-blue);
-}
-
-/* Rodapé */
+/* Footer */
 #main-footer {
     width: 100%;
-    background-color: var(--color-white);
+    background-color: #fff;
     color: var(--color-text);
     padding-top: 40px;
 }
@@ -938,7 +895,7 @@ section {
     display: flex;
     justify-content: space-between;
     padding-bottom: 40px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 #footer-logo-container {
@@ -974,11 +931,11 @@ section {
 #footer-institutional a {
     text-decoration: none;
     color: var(--color-text);
-    font-size: 0.9rem;
+    font-size: .9rem;
     font-weight: 400;
     display: block;
     padding-bottom: 5px;
-    transition: color 0.3s;
+    transition: color .3s;
 }
 
 #footer-services a:hover,
@@ -999,7 +956,40 @@ section {
 #footer-copyright {
     text-align: center;
     padding: 15px 0;
-    font-size: 0.8rem;
+    font-size: .8rem;
     background-color: var(--color-text);
     color: var(--color-white);
+}
+
+/* Ícones sociais (circulares como na imagem) */
+.footer-social {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer-social .social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-blue-bannerescuro);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(6, 54, 67, .45);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .25) inset;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.footer-social .social-icon:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(6, 54, 67, .12);
+}
+
+.footer-social .social-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: none;
+    /* SVG fica na cor original (#063643) */
 }

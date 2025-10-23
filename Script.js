@@ -1,129 +1,73 @@
 // Espera o documento HTML carregar antes de executar o script
 document.addEventListener('DOMContentLoaded', () => {
+  initCarousel();
+  initReviewsPagination();
+  initSmoothScroll();
+});
 
-    // --- CAROUSEL BANNER ---
-    const slides = document.querySelectorAll('.vacina-campanha, .adocao-campanha, .banho-tosa-campanha');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
+function initCarousel() {
+  const slides = document.querySelectorAll('.vacina-campanha, .adocao-campanha, .banho-tosa-campanha');
+  const dots = document.querySelectorAll('.dot');
+  const prev = document.querySelector('.carousel-control.prev');
+  const next = document.querySelector('.carousel-control.next');
+  if (!slides.length || !dots.length || !prev || !next) return;
 
-    if (slides.length > 0 && dots.length > 0 && prevBtn && nextBtn) { // Verifica se os elementos do carrossel existem
-        let currentSlide = 0;
+  let current = 0;
+  const show = (i) => {
+    if (i >= slides.length) i = 0;
+    if (i < 0) i = slides.length - 1;
+    slides.forEach(s => (s.style.display = 'none'));
+    dots.forEach(d => d.classList.remove('active'));
+    slides[i].style.display = 'flex';
+    dots[i].classList.add('active');
+    current = i;
+  };
 
-        function showSlide(index) {
-            // Garante que o índice "dê a volta" (loop)
-            if (index >= slides.length) {
-                index = 0; // Se passou do último, volta ao primeiro
-            }
-            if (index < 0) {
-                index = slides.length - 1; // Se voltou antes do primeiro, vai para o último
-            }
+  next.addEventListener('click', () => show(current + 1));
+  prev.addEventListener('click', () => show(current - 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+  show(0);
+}
 
-            // Esconde TODOS os slides e desativa TODOS os pontos
-            slides.forEach(slide => {
-                slide.style.display = 'none'; // Esconde o slide
-            });
-            dots.forEach(dot => {
-                dot.classList.remove('active'); // Remove a classe 'active' do ponto
-            });
+function initReviewsPagination() {
+  const perPage = 3;
+  const list = [...document.querySelectorAll('#avaliacoes .avaliacao')];
+  const prev = document.getElementById('prev-page-btn');
+  const next = document.getElementById('next-page-btn');
+  const num = document.getElementById('current-page-number');
+  const totalPages = Math.ceil(list.length / perPage);
+  if (!list.length || !prev || !next || !num) return;
 
-            // Mostra o slide correto e ativa o ponto correto
-            slides[index].style.display = 'flex'; // Mostra o slide atual (usando 'flex' como no seu CSS)
-            dots[index].classList.add('active'); // Adiciona 'active' no ponto atual
+  let page = 1;
+  const render = () => {
+    const start = (page - 1) * perPage;
+    const end = start + perPage;
+    list.forEach((el, idx) => el.classList.toggle('review-hidden', idx < start || idx >= end));
+    num.textContent = page;
+    prev.disabled = page === 1;
+    next.disabled = page === totalPages;
+  };
 
-            // Atualiza o índice do slide atual
-            currentSlide = index;
+  prev.addEventListener('click', () => { if (page > 1) { page--; render(); } });
+  next.addEventListener('click', () => { if (page < totalPages) { page++; render(); } });
+  render();
+}
+
+function initSmoothScroll() {
+  const headerOffset = 100;
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const el = document.querySelector(id);
+        if (el) {
+          e.preventDefault();
+          const top = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+          window.scrollTo({ top, behavior: 'smooth' });
+          history.pushState(null, '', id);
         }
-
-        // Adiciona os "escutadores" de clique nos botões
-        nextBtn.addEventListener('click', () => {
-            showSlide(currentSlide + 1); // Vai para o próximo slide
-        });
-
-        prevBtn.addEventListener('click', () => {
-            showSlide(currentSlide - 1); // Vai para o slide anterior
-        });
-
-        // Adiciona "escutadores" de clique nos pontos
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index); // Vai para o slide clicado
-            });
-        });
-
-        // Mostra o primeiro slide (índice 0) assim que a página carrega
-        showSlide(0);
-    } else {
-        console.warn("Elementos do carrossel não encontrados. O carrossel não será inicializado.");
-    }
-
-
-    // --- PAGINAÇÃO DE AVALIAÇÕES ---
-    const reviewsPerPage = 3; // Quantas avaliações mostrar por página
-    let currentPage = 1;
-
-    const allReviews = document.querySelectorAll('#avaliacoes .avaliacao'); // Pega todas as divs de avaliação
-    const prevButtonPagination = document.getElementById('prev-page-btn');
-    const nextButtonPagination = document.getElementById('next-page-btn');
-    const pageNumberDisplay = document.getElementById('current-page-number');
-    const paginationContainer = document.querySelector('.pagination'); // Seleciona o container da paginação
-
-    if (allReviews.length > 0 && prevButtonPagination && nextButtonPagination && pageNumberDisplay && paginationContainer) { // Verifica se os elementos da paginação existem
-        const totalReviews = allReviews.length;
-        const totalPages = Math.ceil(totalReviews / reviewsPerPage);
-
-        function showPage(page) {
-            // Calcula o índice inicial e final das avaliações para a página atual
-            const startIndex = (page - 1) * reviewsPerPage;
-            const endIndex = startIndex + reviewsPerPage;
-
-            // Esconde TODAS as avaliações primeiro
-            allReviews.forEach(review => {
-                review.classList.add('review-hidden');
-            });
-
-            // Mostra apenas as avaliações da página atual
-            for (let i = startIndex; i < endIndex && i < totalReviews; i++) {
-                if (allReviews[i]) { // Verifica se a avaliação existe
-                    allReviews[i].classList.remove('review-hidden');
-                }
-            }
-
-            // Atualiza o número da página exibido
-            pageNumberDisplay.textContent = page;
-
-            prevButtonPagination.disabled = (page === 1);
-            nextButtonPagination.disabled = (page === totalPages);
-        }
-
-       
-        nextButtonPagination.addEventListener('click', () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                showPage(currentPage);
-            }
-        });
-
-        prevButtonPagination.addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                showPage(currentPage);
-            }
-        });
-
-       
-        if (totalReviews > 0) {
-            showPage(1); 
-        } else {
-       
-            paginationContainer.style.display = 'none';
-        }
-    } else {
-         console.warn("Elementos da paginação não encontrados ou não há avaliações. A paginação não será inicializada.");
-         
-         if (paginationContainer) {
-            paginationContainer.style.display = 'none';
-         }
-    }
-
-}); 
+      }
+    });
+  });
+}
