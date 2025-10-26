@@ -12,6 +12,11 @@
 <body>
   <!-- Header -->
   <header id="main-header">
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-controls="mobile-nav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="logo-menu" id="logo">
       <img src="public/Logo.png" alt="Pindorama Pets" id="logo-img" />
       <span id="logo-text">PINDORAMA PETS</span>
@@ -23,6 +28,7 @@
       <a href="#contato">Contato</a>
     </nav>
   </header>
+ 
 
   <main>
     <!-- Âncora para o menu "Início" -->
@@ -48,7 +54,7 @@
           <img src="public/Seringa.png" alt="" id="icon-syringe" />
           <img src="public/Pata.png" alt="" id="icon-paw1" />
           <img src="public/Pata2.png" alt="" id="icon-paw2" />
-          <div>
+          <div class="banner-text">
             <h3 id="vaccine-title">Campanha de vacinação</h3>
             <p id="vaccine-date">Nos dias 19 a 28 de novembro</p>
             <button id="vaccine-button">Saiba mais</button>
@@ -100,7 +106,7 @@
         <div class="about-us-text-container">
           <h3 id="about-us-title">Quem somos</h3>
           <p id="about-us-text">
-            Clínica veterinária comprometida com o cuidado e o bem-estar do seu pet. Equipe dedicada e estrutura moderna para um atendimento humano e de qualidade.
+            Nossa clínica veterinária é comprometida com o cuidado e bem-estar de cada pet, com uma equipe dedicada e instalações modernas, buscamos garantir saúde e conforto em cada atendimento. Cuidamos do seu animalzinho como se fosse nosso!
           </p>
         </div>
       </div>
@@ -122,7 +128,7 @@
         <div class="servico" id="service-consultation">
           <img src="public/Consultas.png" alt="" id="service-consultation-img" />
           <p>
-            Consultas realizadas com atenção aos detalhes, oferecendo diagnósticos precisos e tratamentos eficazes para seu pet.
+           Na nossa clínica veterinária, cada consulta é realizada com dedicação e atenção aos detalhes, garantindo o melhor cuidado para o seu pet. Contamos com uma equipe experiente e atualizada para oferecer diagnósticos precisos e tratamentos eficazes. 
           </p>
         </div>
       </div>
@@ -132,7 +138,7 @@
       <div class="servicos-container">
         <div class="servico" id="service-care">
           <p>
-            Cuidado com carinho e respeito, em um ambiente acolhedor e seguro para seu animal de estimação.
+            Nós cuidamos do seu pet com o carinho e respeito que ele merece. Nossa equipe dedica atenção a cada detalhe, proporcionando um ambiente acolhedor e seguro para que seu animalzinho se sinta em casa. 
           </p>
           <img src="public/Cachorrosorrindo.png" alt="" id="service-care-img" />
         </div>
@@ -170,93 +176,77 @@
     <section id="avaliacoes">
       <div class="avaliacoes-container">
         <h3 id="reviews-title">Avaliações (34)</h3>
-
-        <div class="avaliacao">
-          <img src="public/carabommoco.png" alt="" />
-          <div>
-            <span>Carlos Alberto</span>
-            <div class="estrelas">★★★★★</div>
-            <p>Atendimento excepcional! Cuidaram muito bem do meu pet.</p>
+        <div class="avaliacao-lista">
+          <div class="avaliacao">
+            <img src="public/mohamedsalah.png" alt="" />
+            <div>
+              <span>Marcos Silva</span>
+              <div class="estrelas">★★★★★</div>
+              <p>Profissionais atenciosos e estrutura excelente.</p>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="public/mulherfeinha.png" alt="" />
+            <div>
+              <span>Joseane</span>
+              <div class="estrelas">★★★★★</div>
+              <p>Desde o primeiro contato, fui atendida com gentileza.</p>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="public/carabommoco.png" alt="" />
+            <div>
+              <span>João Henrique</span>
+              <div class="estrelas">★★★★★</div>
+              <p>Explicam tudo com clareza e cuidam muito bem.</p>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="public/mohamedsalah.png" alt="" />
+            <div>
+              <span>Adamiltom Jr</span>
+              <div class="estrelas">★★★★☆</div>
+              <p>Equipamentos ótimos; o tempo de espera poderia ser menor.</p>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="public/mulherfeinha.png" alt="" />
+            <div>
+              <span>Luciana</span>
+              <div class="estrelas">★★★★★</div>
+              <p>Meu gato recebeu o melhor cuidado. Recomendo!</p>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="public/carabommoco.png" alt="" />
+            <div>
+              <span>Matheus</span>
+              <div class="estrelas">★★★★★</div>
+              <p>Equipe dedicada e ambiente acolhedor.</p>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="public/mohamedsalah.png" alt="" />
+            <div>
+              <span>Luiz</span>
+              <div class="estrelas">★★★★★</div>
+              <p>Meu pet recebeu todo o cuidado necessário.</p>
+            </div>
+          </div>
+          <div class="avaliacao">
+            <img src="public/mulherfeinha.png" alt="" />
+            <div>
+              <span>Clariane</span>
+              <div class="estrelas">★★★★☆</div>
+              <p>Atendimento ótimo, alguns serviços são mais caros.</p>
+            </div>
           </div>
         </div>
-
-        <div class="avaliacao">
-          <img src="public/mohamedsalah.png" alt="" />
-          <div>
-            <span>Marcos Silva</span>
-            <div class="estrelas">★★★★★</div>
-            <p>Profissionais atenciosos e estrutura excelente.</p>
-          </div>
+        <div class="pagination">
+          <button class="page-arrow" id="prev-page-btn" disabled>←</button>
+          <span class="page-number" id="current-page-number">1</span>
+          <button class="page-arrow" id="next-page-btn">→</button>
         </div>
-
-        <div class="avaliacao">
-          <img src="public/mulherfeinha.png" alt="" />
-          <div>
-            <span>Joseane</span>
-            <div class="estrelas">★★★★★</div>
-            <p>Desde o primeiro contato, fui atendida com gentileza.</p>
-          </div>
-        </div>
-
-        <div class="avaliacao">
-          <img src="public/carabommoco.png" alt="" />
-          <div>
-            <span>João Henrique</span>
-            <div class="estrelas">★★★★★</div>
-            <p>Explicam tudo com clareza e cuidam muito bem.</p>
-          </div>
-        </div>
-
-        <div class="avaliacao">
-          <img src="public/mohamedsalah.png" alt="" />
-          <div>
-            <span>Adamiltom Jr</span>
-            <div class="estrelas">★★★★☆</div>
-            <p>Equipamentos ótimos; o tempo de espera poderia ser menor.</p>
-          </div>
-        </div>
-
-        <div class="avaliacao">
-          <img src="public/mulherfeinha.png" alt="" />
-          <div>
-            <span>Luciana</span>
-            <div class="estrelas">★★★★★</div>
-            <p>Meu gato recebeu o melhor cuidado. Recomendo!</p>
-          </div>
-        </div>
-
-        <div class="avaliacao">
-          <img src="public/carabommoco.png" alt="" />
-          <div>
-            <span>Matheus</span>
-            <div class="estrelas">★★★★★</div>
-            <p>Equipe dedicada e ambiente acolhedor.</p>
-          </div>
-        </div>
-
-        <div class="avaliacao">
-          <img src="public/mohamedsalah.png" alt="" />
-          <div>
-            <span>Luiz</span>
-            <div class="estrelas">★★★★★</div>
-            <p>Meu pet recebeu todo o cuidado necessário.</p>
-          </div>
-        </div>
-
-        <div class="avaliacao">
-          <img src="public/mulherfeinha.png" alt="" />
-          <div>
-            <span>Clariane</span>
-            <div class="estrelas">★★★★☆</div>
-            <p>Atendimento ótimo, alguns serviços são mais caros.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="pagination">
-        <button class="page-arrow" id="prev-page-btn" disabled>←</button>
-        <span class="page-number" id="current-page-number">1</span>
-        <button class="page-arrow" id="next-page-btn">→</button>
       </div>
     </section>
 

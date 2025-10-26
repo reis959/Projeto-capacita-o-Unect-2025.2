@@ -30,27 +30,42 @@ function initCarousel() {
 }
 
 function initReviewsPagination() {
-  const perPage = 3;
-  const list = [...document.querySelectorAll('#avaliacoes .avaliacao')];
-  const prev = document.getElementById('prev-page-btn');
-  const next = document.getElementById('next-page-btn');
-  const num = document.getElementById('current-page-number');
-  const totalPages = Math.ceil(list.length / perPage);
-  if (!list.length || !prev || !next || !num) return;
+  const reviews = Array.from(document.querySelectorAll('.avaliacao'));
+  const prevBtn = document.getElementById('prev-page-btn');
+  const nextBtn = document.getElementById('next-page-btn');
+  const pageNumber = document.getElementById('current-page-number');
+  if (!reviews.length || !prevBtn || !nextBtn || !pageNumber) return;
 
-  let page = 1;
-  const render = () => {
-    const start = (page - 1) * perPage;
+  const perPage = 3;
+  const totalPages = Math.ceil(reviews.length / perPage);
+  let currentPage = 0;
+
+  const renderPage = () => {
+    const start = currentPage * perPage;
     const end = start + perPage;
-    list.forEach((el, idx) => el.classList.toggle('review-hidden', idx < start || idx >= end));
-    num.textContent = page;
-    prev.disabled = page === 1;
-    next.disabled = page === totalPages;
+
+    reviews.forEach((review, index) => {
+      review.classList.toggle('is-visible', index >= start && index < end);
+    });
+
+    pageNumber.textContent = currentPage + 1;
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = currentPage >= totalPages - 1;
   };
 
-  prev.addEventListener('click', () => { if (page > 1) { page--; render(); } });
-  next.addEventListener('click', () => { if (page < totalPages) { page++; render(); } });
-  render();
+  prevBtn.addEventListener('click', () => {
+    if (currentPage === 0) return;
+    currentPage -= 1;
+    renderPage();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentPage >= totalPages - 1) return;
+    currentPage += 1;
+    renderPage();
+  });
+
+  renderPage();
 }
 
 function initSmoothScroll() {
